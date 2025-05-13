@@ -8,6 +8,7 @@ public class MsUsersDbApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MsUsersDbApplication.class, args);
+		
 	}
 
 }
