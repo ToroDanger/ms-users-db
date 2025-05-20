@@ -3,6 +3,7 @@ package cl.duoc.ms_users_db.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import cl.duoc.ms_users_db.model.entities.User;
@@ -19,4 +20,11 @@ public class UserService {
         return listUsers;
     
     }
+    
+    public User findByUsername(String username) {
+    return userRepository.findByUsername(username)
+           .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
 }
+
+}
+
